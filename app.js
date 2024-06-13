@@ -22,6 +22,8 @@ app.post("/signUp",async(req,res)=>{
     blog.save()
  res.json({"status":"success"})
 })
+//api for signin
+app.post("/signin",)
 app.listen(8080,()=>{
   console.log("Server running")
 })
