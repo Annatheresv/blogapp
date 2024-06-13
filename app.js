@@ -26,7 +26,14 @@ app.post("/signUp",async(req,res)=>{
 app.post("/signin",(req,res)=>{
     let input=req.body
     blogmodel.find({"emailid":req.body.emailid}).then((response)=>{
-        console.log(response)}
+        if(response.length>0){let dbPassword=response[0].password
+            console.log(dbPassword)
+        }else{
+
+        
+            res.json({"status":"user not found"})
+        }
+    }
     ).catch()
 
 })
