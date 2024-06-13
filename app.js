@@ -23,7 +23,13 @@ app.post("/signUp",async(req,res)=>{
  res.json({"status":"success"})
 })
 //api for signin
-app.post("/signin",)
+app.post("/signin",(req,res)=>{
+    let input=req.body
+    blogmodel.find({"emailid":req.body.emailid}).then((response)=>{
+        console.log(response)}
+    ).catch()
+
+})
 app.listen(8080,()=>{
   console.log("Server running")
 })
